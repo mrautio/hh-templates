@@ -38,11 +38,9 @@ references:
 
 # Haaga-Helia pandoc/LaTeX document templates
 
-![Build and test status](https://github.com/mrautio/hh-templates/workflows/CI/badge.svg){#fig:id}
-
 This project's aim is to provide common [Haaga-Helia University of Applied Sciences](https://www.haaga-helia.fi/en) Microsoft Word document templates as [pandoc](https://pandoc.org/) LaTeX templates so that reports may be written in Markdown or LaTeX formats instead of Microsoft Office. At least the author prefers to do school assignments over processes and tools just like in the good ol' agile manifesto [@agilemanifesto2001]!
 
-![Haaga-Helia University of Applied Sciences report logo](media/hhreportlogo.png){#fig:id}
+![Haaga-Helia University of Applied Sciences report logo](../../../media/hhreportlogo.png){#fig:id}
 
 ## Supported templates
 
@@ -50,18 +48,14 @@ Templates are intended to be as close to original templates as possible. However
 
 ### Supported languages
 
-Variable: hhreportlanguage
-
-* Finnish: finnish
-* English: english
+* Finnish
+* English
 
 ### Supported templates
 
-Variable: hhtemplatetype
-
-* Short report template: short
-* Long report template: long
-* Thesis template: thesis
+* Short report template
+* Long report template
+* Thesis template
 
 ### Arial font support
 
@@ -78,13 +72,13 @@ This README file is an example that can be rendered to Haaga-Helia document temp
 
 ```sh
 docker build -t hhtemplate -f Dockerfile .
-docker run --rm -v host-path-to-report-data:/report -t hhtemplate -o /report/report.pdf /report/report.md --variable=hhreportlanguage:english
+docker run --rm -v host-path-to-report-data:/report -t hhtemplate -o /report/report.pdf /report/report.md
 ```
 
 ### Markdown to PDF with pandoc
 
 ```sh
-pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings -o report.pdf report.md --variable=hhreportlanguage:english
+pandoc --from markdown --template hhtemplate.tex --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings -o report.pdf report.md
 ```
 
 ## License
