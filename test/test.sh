@@ -45,15 +45,14 @@ create_pdf ()
 {
 	FILEMD="$1"
 	TEMPLATETYPE="$2"
-	REPORTLANGUAGE="$3"
 
 	assert_file_exists $FILEMD
 
-	FILEPDF="${FILEMD}_actual_${TEMPLATETYPE}_${REPORTLANGUAGE}.pdf"
-	FILEPDFEXPECTED="${FILEMD}_expected_${TEMPLATETYPE}_${REPORTLANGUAGE}.pdf"
+	FILEPDF="${FILEMD}_actual_${TEMPLATETYPE}.pdf"
+	FILEPDFEXPECTED="${FILEMD}_expected_${TEMPLATETYPE}.pdf"
 
 	# Ensure that PDF conversion completes successfully
-	pandoc --verbose --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings --variable=hhdocumentfont:FreeSans -o $FILEPDF $FILEMD --variable=hhtemplatetype:$TEMPLATETYPE --variable=hhreportlanguage:$REPORTLANGUAGE || assert_ret $? 0
+	pandoc --verbose --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings --variable=hhdocumentfont:FreeSans -o $FILEPDF $FILEMD --variable=hhtemplatetype:$TEMPLATETYPE || assert_ret $? 0
 
 	assert_file_exists $FILEPDF
 
@@ -65,14 +64,9 @@ assert_md_template_processing ()
 	FILE="$1"
 	TESTCASE=$FILE
 
-	create_pdf $FILE short finnish
-	create_pdf $FILE short english
-
-	create_pdf $FILE long finnish
-	create_pdf $FILE long english
-
-	create_pdf $FILE thesis finnish
-	create_pdf $FILE thesis english
+	create_pdf $FILE short
+	create_pdf $FILE long
+	create_pdf $FILE thesis
 
 	echo TEST CASE $TESTCASE SUCCESS
 }

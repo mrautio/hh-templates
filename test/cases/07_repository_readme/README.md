@@ -4,6 +4,7 @@ author: "Mika Rautio"
 date: "06.02.2021"
 year: "2021"
 orientation: "Business Information Technology 'n' stuff"
+lang: en-GB
 hhtemplatetype: "long" # "short" and "thesis" supported also
 course: "ICT1TA001-1234 Orientaatio parempiin tekstinkäsittelyratkaisuihin"
 abstract: "Here's some abstract text.\\par Let's see how it ends up..."
@@ -32,7 +33,10 @@ references:
     given: Martin
   type: webpage
   URL: 'https://agilemanifesto.org/'
-  accessed: "2021-02-06"
+  accessed:
+    year: 2021
+    month: 02
+    day: 06
 
 ---
 

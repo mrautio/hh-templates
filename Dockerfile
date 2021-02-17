@@ -10,7 +10,7 @@ RUN apt-get update \
 
 WORKDIR /tmp
 
-ADD hhtemplate.tex ./
 ADD media/*.png ./media/
+ADD harvard-haaga-helia.csl hhtemplate.tex ./
 
-ENTRYPOINT [ "pandoc", "--template=/tmp/hhtemplate.tex", "--filter=pandoc-tablenos", "--filter=pandoc-fignos", "--filter=pandoc-citeproc", "--pdf-engine=xelatex", "--listings", "--variable=hhreportlogopath:/tmp/media/hhreportlogo.png", "--variable=hhdocumentfont:FreeSans" ]
+ENTRYPOINT [ "pandoc", "--template=/tmp/hhtemplate.tex", "--filter=pandoc-tablenos", "--filter=pandoc-fignos", "--filter=pandoc-citeproc", "--pdf-engine=xelatex", "--listings", "--variable=hhreportlogopath:/tmp/media/hhreportlogo.png", "--variable=hhdocumentfont:FreeSans", "--csl=/tmp/harvard-haaga-helia.csl" ]

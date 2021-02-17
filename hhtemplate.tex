@@ -6,7 +6,7 @@
 % Note: Idea here is that LaTeX template could be used relatively easy without pandoc
 % Note: Some exceptions allowed but aim to minimize pandoc templating rules
 \documentclass[a4paper,11pt]{$documentclass$}
-\providecommand{\hhreportlanguage}{$if(hhreportlanguage)$$hhreportlanguage$$else$finnish$endif$}
+\providecommand{\hhreportlanguage}{$if(lang)$$babel-lang$$else$finnish$endif$}
 \providecommand{\hhreportlogopath}{$if(hhreportlogopath)$$hhreportlogopath$$else$media/hhreportlogo.png$endif$}
 \providecommand{\hhtemplatetype}{$if(hhtemplatetype)$$hhtemplatetype$$else$short$endif$}
 \providecommand{\hhdocumentdate}{$date$}
@@ -22,6 +22,7 @@ $if(beamer)$
   % HH beamer template not needed, use some other available templates, f.e. https://ashwinschronicles.github.io/beamer-slides-using-markdown-and-pandoc
   \GenericError{}{beamer format is not supported}
 $endif$
+
 % END OF pandoc specific templating syntax
 
 \usepackage{ifthen}
@@ -71,37 +72,37 @@ $endif$
 % Table = Taulukko
 
 \ifthenelse{\equal{\degreetype}{MBA}}{
-\newtranslation[to = english]{thesis}{Master thesis}
+\newtranslation[to = british]{thesis}{Master thesis}
 \newtranslation[to = finnish]{thesis}{Master opinnäytetyö}
 }
 { % BBA
-\newtranslation[to = english]{thesis}{Thesis}
+\newtranslation[to = british]{thesis}{Thesis}
 \newtranslation[to = finnish]{thesis}{Opinnäytetyö}
 }
 
-\newtranslation[to = english]{report}{Report}
+\newtranslation[to = british]{report}{Report}
 \newtranslation[to = finnish]{report}{Raportti}
-\newtranslation[to = english]{assignmentreport}{Report}
+\newtranslation[to = british]{assignmentreport}{Report}
 \newtranslation[to = finnish]{assignmentreport}{Harjoitustyöraportti}
-\newtranslation[to = english]{toctitle}{Contents}
+\newtranslation[to = british]{toctitle}{Contents}
 \newtranslation[to = finnish]{toctitle}{Sisällys}
-\newtranslation[to = english]{abstract}{Abstract}
+\newtranslation[to = british]{abstract}{Abstract}
 \newtranslation[to = finnish]{abstract}{Tiivistelmä}
-\newtranslation[to = english]{authors}{Author(s)}
+\newtranslation[to = british]{authors}{Author(s)}
 \newtranslation[to = finnish]{authors}{Tekijä(t)}
-\newtranslation[to = english]{thesisname}{Thesis title}
+\newtranslation[to = british]{thesisname}{Thesis title}
 \newtranslation[to = finnish]{thesisname}{Opinnäytetyön nimi}
-\newtranslation[to = english]{pagecount}{Pages}
+\newtranslation[to = british]{pagecount}{Number of pages}
 \newtranslation[to = finnish]{pagecount}{Sivumäärä}
-\newtranslation[to = english]{appendixpagecount}{Appendix pages}
+\newtranslation[to = british]{appendixpagecount}{number of appendices}
 \newtranslation[to = finnish]{appendixpagecount}{liitesivumäärä}
-\newtranslation[to = english]{keywords}{Key words}
+\newtranslation[to = british]{keywords}{Keywords}
 \newtranslation[to = finnish]{keywords}{Asiasanat}
-\newtranslation[to = english]{orientation}{Orientation}
+\newtranslation[to = british]{orientation}{Orientation}
 \newtranslation[to = finnish]{orientation}{Suuntautuminen}
-\newtranslation[to = english]{abbreviations}{Abbreviations}
+\newtranslation[to = british]{abbreviations}{Abbreviations}
 \newtranslation[to = finnish]{abbreviations}{Lyhenteet}
-\newtranslation[to = english]{hhfullname}{Haaga-Helia University of Applied Sciences}
+\newtranslation[to = british]{hhfullname}{Haaga-Helia University of Applied Sciences}
 \newtranslation[to = finnish]{hhfullname}{Haaga-Helia ammattikorkeakoulu}
 
 \usepackage{longtable}

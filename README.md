@@ -3,6 +3,7 @@ title: "Readme as an example document"
 author: "Mika Rautio"
 date: "06.02.2021"
 year: "2021"
+lang: en-GB
 orientation: "Business Information Technology 'n' stuff"
 hhtemplatetype: "long" # "short" and "thesis" supported also
 course: "ICT1TA001-1234 Orientaatio parempiin tekstinkäsittelyratkaisuihin"
@@ -38,7 +39,10 @@ references:
     given: Martin
   type: webpage
   URL: 'https://agilemanifesto.org/'
-  accessed: "2021-02-06"
+  accessed:
+    year: 2021
+    month: 02
+    day: 06
 
 ---
 
@@ -56,10 +60,10 @@ Templates are intended to be as close to original templates as possible. However
 
 ### Supported languages
 
-Variable: hhreportlanguage
+Variable (in Markdown file YAML header): lang
 
-* Finnish: finnish
-* English: english
+* Finnish: fi-FI
+* English: en-GB
 
 ### Supported templates
 
@@ -84,13 +88,13 @@ This README file is an example that can be rendered to Haaga-Helia document temp
 
 ```sh
 docker build -t hhtemplate -f Dockerfile .
-docker run --rm -v host-path-to-report-data:/report -t hhtemplate -o /report/report.pdf /report/report.md --variable=hhreportlanguage:english
+docker run --rm -v host-path-to-report-data:/report -t hhtemplate -o /report/report.pdf /report/report.md --variable=hhtemplatetype:long
 ```
 
 ### Markdown to PDF with pandoc
 
 ```sh
-pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings -o report.pdf report.md --variable=hhreportlanguage:english
+pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings --csl=harvard-haaga-helia.csl -o report.pdf report.md --variable=hhtemplatetype:long
 ```
 
 ## License
