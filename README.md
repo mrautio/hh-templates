@@ -7,6 +7,12 @@ orientation: "Business Information Technology 'n' stuff"
 hhtemplatetype: "long" # "short" and "thesis" supported also
 course: "ICT1TA001-1234 Orientaatio parempiin tekstinkäsittelyratkaisuihin"
 abstract: "Here's some abstract text.\\par Let's see how it ends up..."
+hhdocumentkeywords:
+- LaTeX
+- Markdown
+- pandoc
+- Haaga-Helia
+- report templates
 glossaries:
 - name: PDF
   description: Portable Document Format
@@ -59,9 +65,9 @@ Variable: hhreportlanguage
 
 Variable: hhtemplatetype
 
-* Short report template: short
-* Long report template: long
-* Thesis template: thesis
+* Short report template: [short](https://github.com/mrautio/hh-templates/blob/main/examples/README_short_english.pdf)
+* Long report template: [long](https://github.com/mrautio/hh-templates/blob/main/examples/README_long_english.pdf)
+* Thesis template: [thesis](https://github.com/mrautio/hh-templates/blob/main/examples/README_thesis_english.pdf)
 
 ### Arial font support
 

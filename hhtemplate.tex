@@ -13,7 +13,7 @@
 \providecommand{\hhdocumentyear}{$if(year)$$year$$else$$date$$endif$}
 \providecommand{\hhdocumentauthor}{$author$}
 \providecommand{\hhdocumenttitle}{$title$}
-\providecommand{\hhdocumentkeywords}{$if(hhdocumentkeywords)$$hhdocumentkeywords$$else$\ $endif$}
+\providecommand{\hhdocumentkeywords}{$for(hhdocumentkeywords)$$hhdocumentkeywords$$sep$, $endfor$}
 \providecommand{\degreetype}{$if(degreetype)$$degreetype$$else$BBA$endif$}
 \providecommand{\course}{$if(course)$$course$$else$\ $endif$}
 \providecommand{\orientation}{$if(orientation)$$orientation$$else$\ $endif$}
