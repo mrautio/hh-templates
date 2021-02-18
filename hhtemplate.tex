@@ -11,8 +11,8 @@
 \providecommand{\hhtemplatetype}{$if(hhtemplatetype)$$hhtemplatetype$$else$short$endif$}
 \providecommand{\hhdocumentdate}{$date$}
 \providecommand{\hhdocumentyear}{$if(year)$$year$$else$$date$$endif$}
-\providecommand{\hhdocumentauthor}{$author$}
-\providecommand{\hhdocumenttitle}{$title$}
+\providecommand{\hhdocumentauthor}{$if(author)$$author$$else$\ $endif$}
+\providecommand{\hhdocumenttitle}{$if(title)$$title$$else$\ $endif$}
 \providecommand{\hhdocumentkeywords}{$for(hhdocumentkeywords)$$hhdocumentkeywords$$sep$, $endfor$}
 \providecommand{\degreetype}{$if(degreetype)$$degreetype$$else$BBA$endif$}
 \providecommand{\course}{$if(course)$$course$$else$\ $endif$}
