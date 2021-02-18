@@ -1,52 +1,278 @@
 ---
-title: "Test case?"
-author: "John Doe"
-date: "20.01.1970"
-course: "ICT1TA1337 test case"
+author: John Doe
+lang: en-GB
 references:
-- id: agilemanifesto2001
-  title: Manifesto for Agile Software Development
+- id: bookoneauth
+  title: "Cite them right: The essential referencing guide"
+  author:
+  - family: Pears
+    given: Raaa
+  publisher: Red Globe Press
+  publisher-place: London
+  type: book
   issued:
-    year: 2001
+    year: 2019
+- id: booktwoauth
+  title: "Accounting and finance for non-specialists"
   author:
-  - family: Beck
-    given: Kent
-  - family: Beedle
-    given: Mike
-  - family: van Bennekum
-    given: Arie
-  - family: Cockburn
-    given: Alistair
-  - family: Cunningham
-    given: Ward
-  - family: Fowler
-    given: Martin
-  type: webpage
-  URL: 'https://agilemanifesto.org/'
-  accessed: "2021-02-06"
-- id: kehitäkokeillen
-  title: "Kehitä kokeillen: organisaation käsikirja"
+  - family: Atrill
+    given: Paaa
+  - family: McLaney
+    given: [Eaaa, Jaaa]
+  publisher: Pearson
+  publisher-place: Harlow
+  type: book
+  issued:
+    year: 2019
+- id: bookthreeormoreauth
+  title: "This is service design methods: A companion to this is service design doing"
   author:
-  - family: Hassi
-    given: Lotta
-  - family: Paju
-    given: Sami
-  - family: Maila
-    given: Reetta
-  ISBN: 978-952-14-2642-1
-  publisher: Talentum Media
+  - family: Stickdorn
+    given: Maaa
+  - family: Lawrence
+    given: Aaaa
+  - family: Hormess
+    given: [Maaa, Eaaa]
+  - family: Schneider
+    given: Jaaa
+  publisher: "O'Reilly Media"
+  publisher-place: Sebastopol
+  type: book
+  issued:
+    year: 2018
+- id: booksizeormoreauth
+  title: "Thesis survival guide"
+  author:
+  - family: Potter
+    given: Taaa
+  - family: Lynch
+    given: Saaa
+  - family: Newton
+    given: [Aaaa]
+  - family: Harris
+    given: Baaa
+  - family: Fox
+    given: Eaaa
+  - family: Stein
+    given: Kaaa
+  publisher: "O'Reilly Media"
+  publisher-place: Sebastopol
+  type: book
+  issued:
+    year: 2020
+- id: severalsources1
+  title: How to lead people
+  author:
+  - family: Smith
+    given: Jaaa
+  publisher: HR Publishing
+  publisher-place: New York
+  type: book
+  issued:
+    year: 2020
+- id: severalsources2
+  title: Accepting change
+  author:
+  - family: Smith
+    given: Jaaa
+  publisher: HR Publishing
+  publisher-place: New York
+  type: book
+  issued:
+    year: 2020
+- id: severalsources3
+  title: Reward system and leadership
+  author:
+  - family: Smith
+    given: Jaaa
+  publisher: HR Publishing
+  publisher-place: New York
+  type: book
+  issued:
+    year: 2020
+- id: authorunknown
+  title: National action plan on fundamental and human rights
+  publisher: Ministry of Justice
   publisher-place: Helsinki
   type: book
   issued:
-    year: 2015
-  page: 2-195
+    year: 2017
+- id: yearunknown
+  title: Indoor air problems at the workplace
+  publisher: Finnish Institute of Occupational Health
+  URL: https://www.ttl.fi/en/service/indoor-air-problems-at-workplaces/
+  type: webpage
+  accessed:
+    year: 2020
+    month: 04
+    day: 29
+- id: chapterineditedwork
+  title: "Understanding academic leadership using the four-frame model. In Pekkola, E., Kivistö, J., Kohtamäki, V., Cai, Y. & Lyytinen A. Theoretical and methodological perspectives on higher education management and transformation: An advanced reader for PhD students, pp. 167–178"
+  author:
+  - family: Vuori
+    given: Jaaa
+  publisher: Tampere University Press
+  publisher-place: Tampere
+  type: book
+  issued:
+    year: 2018
+- id: article1
+  title: Micro hotels the next trend
+  author:
+  - family: Jafri
+    given: Saa
+  type: article
+  container-title: Hospitality News Middle East
+  volume: 128
+  page: 34--35
+  issued:
+    year: 2020
+- id: article2
+  title: Micro hotels the next trend
+  author:
+  - family: Kumar
+    given: Vaa
+  type: article-journal
+  container-title: Journal of Marketing
+  volume: 81
+  issue: 2
+  page: 1--7
+  issued:
+    year: 2017 
+- id: email1
+  title: "President. Haaga-Helia University of Applied Sciences"
+  source: Email
+  author:
+  - family: Kokko
+    given: Taaa
+  type: personal_communication
+  issued:
+    year: 2019
+    month: 7
+    day: 4
+- id: socialmedia1
+  title: "Climate change is about all of us - -"
+  source: Facebook post
+  publisher: European Union
+  type: post
+  URL: 'https://www.facebook.com/EuropeanCommission/posts/2766485036732292'
+  issued:
+    year: 2020
+    month: 1
+    day: 12
+  accessed:
+    year: 2020
+    month: 3
+    day: 12
+- id: thesis1
+  title: Blogging and expert image
+  URL: 'http://www.urn.fi/URN:NBN:fi:amk-2017111016892'
+  genre: "Master's thesis"
+  publisher: "Haaga-Helia University of Applied Sciences, Degree Programme in Communication Management"
+  accessed:
+    year: 2020
+    month: 4
+    day: 16
+  author:
+  - family: Kataja
+    given: Taaa
+  issued:
+    year: 2017
+  type: thesis
+- id: interview1
+  title: Head of human resources. Bestcompany
+  author:
+  - family: Korhonen
+    given: Maaa
+  source: Interview
+  event-place: Helsinki
+  type: personal_communication
+  issued:
+    year: 2019
+    month: 6
+    day: 5
+- id: seminar1
+  title: "Chief financial officer. The future of artificial intelligence in accounting. Biggy Corporation"
+  author:
+  - family: Vaarala
+    given: Jaaa
+  source: Seminar presentation
+  event-place: Tampere
+  issued:
+    year: 2019
+    month: 2
+    day: 3
 
 ---
 
-# Testing references
+# Citation tests
 
-Making a witty reference to agile manifesto [@agilemanifesto2001]. However webpages aren't the only sources that require referencing, we have books. [@kehitäkokeillen]
+These tests are based on Haaga-Helia citation guides:
 
-Does second reference make a difference [@kehitäkokeillen] vs. [@agilemanifesto2001] in a new paragraph?
+* [Finnish](https://libguides.haaga-helia.fi/lahdeviittaamisen-tueksi/tekstiviitteet-ja-lahdeluettelo)
+* [English](https://libguides.haaga-helia.fi/referencing/citations-and-list-of-references)
+
+## Number of authors citation tests
+
+Single author in text reference [@bookoneauth, 65­--­69].
+
+Two authors in text reference [@booktwoauth, 27].
+
+3-5 authors, when referring to them for the first time [@bookthreeormoreauth, 35].
+
+3-5 authors, when referring to them again [@bookthreeormoreauth, 72].
+
+6 or more authors [@booksizeormoreauth, 30]. no locators test [@booksizeormoreauth].
+
+## Several sources in paragraph
+
+NOTE: HH guides say that citation should look like this "(Pears 2019, 65­–69; Potter & al 2020, 65-67)", i.e. dashes are different length and "& al" does not have full stop in the end. I'm guessing it to be an error in the guidelines and CSL configuration to be correct.
+
+Several citations in paragraph [@bookoneauth, 65­–69; @booksizeormoreauth, 65--67]
+
+## Several sources from the same author
+
+[@severalsources1, 6]
+
+[@severalsources2, 15--22]
+
+[@severalsources3, 9]
+
+## Author unknown
+
+[@authorunknown, 29--30]
+
+## Year of publication unknown
+
+[@yearunknown]
+
+## Chapter or article in an edited work
+
+[@chapterineditedwork, 170]
+
+## Journal, magazine, newspaper article
+
+[@article1, 34--35]
+
+[@article2, 1--7]
+
+## Theses and dissertations
+
+[@thesis1]
+
+## Email
+
+[@email1]
+
+## Social media
+
+[@socialmedia1]
+
+## Oral sources
+
+Interview of personal communication: [@interview1].
+
+Seminar or conference presentation: [@seminar1].
 
 # References
+

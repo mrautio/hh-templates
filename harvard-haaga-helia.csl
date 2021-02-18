@@ -2,21 +2,21 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="fi-FI">
   <info>
     <title>Haaga-Helia University of Applied Sciences - Harvard</title>
-    <id>harvard-haaga-helia</id>
+    <id>haaga-helia-university-of-applied-sciences-harvard</id>
     <link href="https://raw.githubusercontent.com/mrautio/hh-templates/main/harvard-haaga-helia.csl" rel="self"/>
-    <link href="https://libguides.haaga-helia.fi/referencing" rel="documentation"/>
+    <link href="https://libguides.haaga-helia.fi/referencing" xml:lang="en-GB" rel="documentation"/>
+    <link href="https://libguides.haaga-helia.fi/lahdeviittaamisen-tueksi" xml:lang="fi-FI" rel="documentation"/>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
-    <summary>Haaga-Helia University of Applied Sciences referencing</summary>
-    <rights license="https://creativecommons.org/publicdomain/zero/1.0/">This work is licensed under a Creative Commons Universal (CC0 1.0) Public Domain Dedication</rights>
+    <updated>1970-01-01T00:00:00Z</updated>
+    <summary>Haaga-Helia University of Applied Sciences referencing style</summary>
   </info>
   <macro name="author">
     <names variable="author">
       <name name-as-sort-order="all" and="text" sort-separator=", " initialize-with="." delimiter-precedes-last="never" delimiter=", "/>
       <label form="short" prefix=" "/>
       <substitute>
-        <names variable="publisher"/>
-        <text macro="title"/>
+        <text variable="publisher"/>
       </substitute>
     </names>
   </macro>
@@ -24,8 +24,7 @@
     <names variable="author">
       <name form="short" and="text" sort-separator=", " initialize-with="." delimiter-precedes-last="never" delimiter=", "/>
       <substitute>
-        <names variable="publisher"/>
-        <text macro="title"/>
+        <text variable="publisher"/>
       </substitute>
     </names>
   </macro>
@@ -46,48 +45,73 @@
   <macro name="title">
     <text variable="title"/>
   </macro>
+  <macro name="genre">
+    <text variable="genre"/>
+  </macro>
   <macro name="publisher">
     <group delimiter=". " suffix="">
       <text variable="publisher"/>
       <text variable="publisher-place"/>
     </group>
   </macro>
-  <macro name="year-date">
+  <macro name="container">
+    <group delimiter=", " suffix="">
+      <text variable="container-title"/>
+      <text variable="volume"/>
+      <text variable="issue"/>
+      <group>
+        <text term="page" suffix=" "/>
+        <text variable="page"/>
+      </group>
+    </group>
+  </macro>
+  <macro name="source">
+    <text variable="source"/>
+  </macro>
+  <macro name="event">
+    <text variable="event" suffix=". "/>
+    <text variable="event-place"/>
+  </macro>
+  <macro name="issued">
     <choose>
       <if variable="issued">
-        <date variable="issued">
-          <date-part name="year"/>
-         </date>
+        <date variable="issued" form="text"/>
       </if>
       <else>
         <text term="no date"/>
       </else>
     </choose>
   </macro>
+  <macro name="locator">
+    <text variable="locator" prefix=", "/>
+  </macro>
   <citation et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true">
     <sort>
-      <key macro="year-date"/>
+      <key macro="issued"/>
       <key variable="author"/>
     </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=" ">
         <text macro="author-short"/>
-        <text macro="year-date"/>
+        <text macro="issued"/>
+        <text macro="locator"/>
       </group>
     </layout>
   </citation>
-  <bibliography hanging-indent="false">
+  <bibliography>
     <sort>
       <key macro="author"/>
-      <key macro="year-date"/>
-      <key variable="title"/>
     </sort>
     <layout>
       <text macro="author"/>
-      <text macro="year-date" prefix=" " suffix="."/>
+      <text macro="issued" prefix=" " suffix="."/>
       <group delimiter=". " prefix=" " suffix=".">
         <text macro="title"/>
+        <text macro="genre"/>
         <text macro="publisher"/>
+        <text macro="container"/>
+        <text macro="source"/>
+        <text macro="event"/>
         <text macro="access" />
       </group>
     </layout>
@@ -103,6 +127,7 @@
       <term name="and">&amp;</term>
       <term name="et-al">&amp; al.</term>
       <term name="available at">URL</term>
+      <term name="page">pp.</term>
     </terms>
   </locale>
   <locale xml:lang="fi-FI">
@@ -117,6 +142,7 @@
       <term name="et-al">ym.</term>
       <term name="available at">Luettavissa</term>
       <term name="accessed">Luettu</term>
+      <term name="page">s.</term>
     </terms>
   </locale>
 </style>
