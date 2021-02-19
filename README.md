@@ -69,7 +69,7 @@ Variable (in Markdown file YAML header): lang
 
 Variable: hhtemplatetype
 
-* Short report template: [short](https://github.com/mrautio/hh-templates/blob/main/examples/README_short_english.pdf)
+* Short (SFS 2487) report template: [short](https://github.com/mrautio/hh-templates/blob/main/examples/README_short_english.pdf)
 * Long report template: [long](https://github.com/mrautio/hh-templates/blob/main/examples/README_long_english.pdf)
 * Thesis template: [thesis](https://github.com/mrautio/hh-templates/blob/main/examples/README_thesis_english.pdf)
 
