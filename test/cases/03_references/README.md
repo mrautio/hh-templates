@@ -1,6 +1,6 @@
 ---
 author: John Doe
-lang: en-GB
+lang: fi-FI
 references:
 - id: bookoneauth
   title: "Cite them right: The essential referencing guide"
@@ -139,6 +139,21 @@ references:
   page: 1--7
   issued:
     year: 2017 
+- id: ebook1
+  title: Työaikalain soveltaminen käytännönläheisesti
+  author:
+  - family: Antola
+    given: Maaa
+  issued:
+    year: 2019
+  type: book
+  publisher: Kauppakamari
+  publisher-place: Helsinki
+  URL: https://kauppakamaritieto.fi/fi/s/ak/kirjat/tyoaikalain-soveltaminen-kaytannonlaheisesti-2019/
+  accessed:
+    year: 2019
+    month: 11
+    day: 20
 - id: email1
   title: "President. Haaga-Helia University of Applied Sciences"
   source: Email
@@ -197,17 +212,82 @@ references:
   - family: Vaarala
     given: Jaaa
   source: Seminar presentation
+  type: speech
   event-place: Tampere
   issued:
     year: 2019
     month: 2
     day: 3
+- id: eudirective1
+  title: 'Regulation on the Hygiene of Foodstuffs 852/2004/EC'
+  title-short: 'Regulation on the Hygiene of Foodstuffs'
+  container-title: 'Regulation 852/2004/EC of the European Parliament and of the Council on the Hygiene of Foodstuffs'
+  collection-title: 'Official Journal of the European Union, L226/3'
+  type: legislation
+  page: 3--21
+  issued:
+    year: 2004
+    month: 6
+    day: 25
+- id: filaw1
+  title: "Act on the Protection of Privacy in Working Life 759/2004"
+  title-short: "Act on the Protection of Privacy in Working Life"
+  type: legislation
+- id: standard1
+  title: IAS 18
+  publisher: International Accounting Standards Board
+  container-title: 'Kansainvälinen tilinpäätösstandardi. Tuotot'
+  type: legislation
+- id: image1
+  publisher: WWF
+  title: Pikeperch
+  URL: https://wwf.fi/kalaopas/laji/kuha/
+  type: graphic
+  accessed:
+    year: 2020
+    month: 4
+    day: 14
+- id: image2
+  author:
+  - family: Dooley
+    given: Kaaa
+  title: Retail
+  note: CC BY 2.0
+  type: graphic
+  URL: https://ccsearch.creativecommons.org/photos/1ebabd83-1e6c-46f3-8a4d-16aabf46cbda
+  accessed:
+    year: 2019
+    month: 12
+    day: 9
+- id: figure1
+  author:
+  - family: Ulrich
+    given: Daa
+  - family: Brockbank
+    given: Waa
+  - family: Johnson
+    given: Daa
+  - family: Sandholtz
+    given: Kaa
+  - family: Younger
+    given: Jaa
+  issued:
+    year: 2008
+  type: figure
+  title: "Hr competencies : mastery at the intersection of people and business"
+  publisher: Independent Publishers Group
+  publisher-place: Alexandria
+  URL: "http://search.ebscohost.com/login.aspx?direct=true&db=e000tww&AN=399667&site=ehost-live&scope=site"
+  accessed:
+    year: 2020
+    month: 4
+    day: 15
 
 ---
 
 # Citation tests
 
-These tests are based on Haaga-Helia citation guides:
+These tests are based on / copied from Haaga-Helia citation guides:
 
 * [Finnish](https://libguides.haaga-helia.fi/lahdeviittaamisen-tueksi/tekstiviitteet-ja-lahdeluettelo)
 * [English](https://libguides.haaga-helia.fi/referencing/citations-and-list-of-references)
@@ -215,6 +295,8 @@ These tests are based on Haaga-Helia citation guides:
 ## Number of authors citation tests
 
 Single author in text reference [@bookoneauth, 65­--­69].
+
+Single author in paragraph reference. Is done like this. [@bookoneauth, 65­--­69.]
 
 Two authors in text reference [@booktwoauth, 27].
 
@@ -225,8 +307,6 @@ Two authors in text reference [@booktwoauth, 27].
 6 or more authors [@booksizeormoreauth, 30]. no locators test [@booksizeormoreauth].
 
 ## Several sources in paragraph
-
-NOTE: HH guides say that citation should look like this "(Pears 2019, 65­–69; Potter & al 2020, 65-67)", i.e. dashes are different length and "& al" does not have full stop in the end. I'm guessing it to be an error in the guidelines and CSL configuration to be correct.
 
 Several citations in paragraph [@bookoneauth, 65­–69; @booksizeormoreauth, 65--67]
 
@@ -260,19 +340,35 @@ Several citations in paragraph [@bookoneauth, 65­–69; @booksizeormoreauth, 65
 
 [@thesis1]
 
-## Email
+## Electronical sources
 
-[@email1]
+E-book without pages: [@ebook1, chapter 3.3]
 
-## Social media
+Email: [@email1]
 
-[@socialmedia1]
+Social media: [@socialmedia1]
 
 ## Oral sources
 
 Interview of personal communication: [@interview1].
 
 Seminar or conference presentation: [@seminar1].
+
+## Illustrations, figures, tables 
+
+Figure 1. The crucial relationship between talent management and organization design [adapted from @figure1, 100]
+
+An image from internet: Image 1. Pikeperch [@image1]
+
+CC licensed image: Image 2. Retail [@image2]
+
+## Laws, EU directives, standards 
+
+FI law: [@filaw1], subsequent ref: [@filaw1].
+
+EU Directive: [@eudirective1], subsequent ref: [@eudirective1].
+
+Standard: [@standard1, paragraph 14], subsequent ref: [@standard1, paragraph 14].
 
 # References
 
