@@ -19,9 +19,16 @@ jobs:
     - name: Build template test automation Docker image
       run: docker build -t hhtemplatetest -f test/Dockerfile test
     - name: Run tests
-      run: docker run --rm -t hhtemplatetest | tee test-log.txt
+      run: docker run --name hhtemplatetest -t hhtemplatetest | tee test-log.txt
     - name: Upload test logs
       uses: actions/upload-artifact@v1
       with:
         name: test-log.txt
         path: test-log.txt
+    - name: Copy test cases from container
+      run: docker cp hhtemplatetest:/tmp/cases test_cases
+    - name: Upload test cases
+      uses: actions/upload-artifact@v1
+      with:
+        name: test_cases
+        path: test_cases
