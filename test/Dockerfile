@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y imagemagick \
 
 WORKDIR /tmp
 
-ADD test.sh .
-ADD cases cases
+COPY test.sh .
+COPY cases cases
 
-ENTRYPOINT [ "/bin/bash", "./test.sh" ]
+ENTRYPOINT [ "./test.sh" ]

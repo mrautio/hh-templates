@@ -1,6 +1,6 @@
 ---
 author: John Doe
-lang: fi-FI
+lang: en-GB
 references:
 - id: bookoneauth
   title: "Cite them right: The essential referencing guide"

@@ -94,8 +94,12 @@ docker run --rm -v host-path-to-report-data:/report -t hhtemplate -o /report/rep
 ### Markdown to PDF with pandoc
 
 ```sh
-pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings --csl=harvard-haaga-helia.csl -o report.pdf report.md --variable=hhtemplatetype:long
+pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings --csl=https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard -o report.pdf report.md --variable=hhtemplatetype:long
 ```
+
+## Haaga-Helia reference Citation Style Language (CSL) configuration
+
+Haaga-Helia reference style CSL configuration is available from [https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard](https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard). You can use the style with CSL supporting reference management software like Papers, RefWorks or Zotero.
 
 ## License
 
