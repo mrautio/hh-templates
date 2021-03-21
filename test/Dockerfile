@@ -1,4 +1,4 @@
-FROM hhtemplate:latest
+FROM hh-templates:latest
 
 RUN apt-get update && apt-get install -y imagemagick \
   # Allow PDF handling
