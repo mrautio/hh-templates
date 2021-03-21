@@ -56,7 +56,7 @@ This project's aim is to provide common [Haaga-Helia University of Applied Scien
 
 ## Supported templates
 
-Templates are intended to be as close to original templates as possible. However, templates are still work-in-progress and not 100 % accurate. Feel free to contribute with formatting improvements.
+Templates are intended to be as close to original templates as possible. Feel free to contribute with formatting improvements.
 
 ### Supported languages
 
@@ -87,8 +87,7 @@ This README file is an example that can be rendered to Haaga-Helia document temp
 ### Markdown to PDF with Docker
 
 ```sh
-docker build -t hhtemplate -f Dockerfile .
-docker run --rm -v host-path-to-report-data:/report -t hhtemplate -o /report/report.pdf /report/report.md --variable=hhtemplatetype:long
+docker run --rm -v host-path-to-report-data:/report -t mrautio/hh-templates -o /report/report.pdf /report/report.md --variable=hhtemplatetype:long
 ```
 
 ### Markdown to PDF with pandoc
