@@ -90,6 +90,12 @@ This README file is an example that can be rendered to Haaga-Helia document temp
 docker run --rm -v host-path-to-report-data:/report -t mrautio/hh-templates -o /report/report.pdf /report/report.md --variable=hhtemplatetype:long
 ```
 
+You can use [cosign](https://github.com/sigstore/cosign) to validate the container releases.
+
+```sh
+cosign verify -key cosign.pub mrautio/hh-templates
+```
+
 ### Markdown to PDF with pandoc
 
 ```sh
