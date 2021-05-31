@@ -47,6 +47,7 @@ $endif$
 \usepackage{amssymb}
 \usepackage{unicode-math}
 \usepackage{graphicx}
+\usepackage{pgfplotstable}
 
 \usepackage{fontspec}
 \setmainfont{\hhdocumentfont}
@@ -233,6 +234,10 @@ $endif$
 }
 \makeatother
 
+$for(include-before)$
+$include-before$
+$endfor$
+
 \begin{document}
 
 \ifthenelse{\equal{\hhtemplatetype}{long}\OR\equal{\hhtemplatetype}{thesis}}{
@@ -368,8 +373,6 @@ $endif$
 \addtolength{\leftskip}{\hhleftmargin}
 $body$
 
-% TODO: After lähteet/sources there should be Liitteet/Appendices
-%\setcounter{page}{1}
 $if(include-after)$
 \setcounter{secnumdepth}{-1}
 \renewcommand{\sectionbreak}{\newpage}
