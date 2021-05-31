@@ -52,7 +52,7 @@ create_pdf ()
 	FILEPDFEXPECTED="${FILEMD}_expected_${TEMPLATETYPE}.pdf"
 
 	# Ensure that PDF conversion completes successfully
-	pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings --variable=hhdocumentfont:FreeSans --csl=/tmp/haaga-helia-university-of-applied-sciences-harvard.csl --verbose -o $FILEPDF $FILEMD --variable=hhtemplatetype:$TEMPLATETYPE || assert_ret $? 0
+	pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --filter pandoc-plantuml --pdf-engine=xelatex --listings --variable=hhdocumentfont:FreeSans --csl=/tmp/haaga-helia-university-of-applied-sciences-harvard.csl --verbose -o $FILEPDF $FILEMD --variable=hhtemplatetype:$TEMPLATETYPE || assert_ret $? 0
 
 	assert_file_exists $FILEPDF
 

@@ -98,8 +98,10 @@ cosign verify -key cosign.pub mrautio/hh-templates
 
 ### Markdown to PDF with pandoc
 
+Note: Filters are not mandatory but some features depend on them
+
 ```sh
-pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --pdf-engine=xelatex --listings --csl=https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard -o report.pdf report.md --variable=hhtemplatetype:long
+pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-citeproc --filter pandoc-plantuml --pdf-engine=xelatex --listings --csl=https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard -o report.pdf report.md --variable=hhtemplatetype:long
 ```
 
 ## Haaga-Helia reference Citation Style Language (CSL) configuration
