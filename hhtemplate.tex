@@ -370,5 +370,14 @@ $body$
 
 % TODO: After lähteet/sources there should be Liitteet/Appendices
 %\setcounter{page}{1}
+$if(include-after)$
+\setcounter{secnumdepth}{-1}
+\renewcommand{\sectionbreak}{\newpage}
+\titleformat*{\subsection}{\normalfont}
+\titleformat*{\subsubsection}{\normalfont}
+$for(include-after)$
+$include-after$
+$endfor$
+$endif$
 
 \end{document}
