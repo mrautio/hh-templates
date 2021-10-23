@@ -33,11 +33,13 @@ $endif$
   % text paragraph margin seems to start from 4.5cm
   \providecommand{\hhleftmargin}{4.5cm}
   \PassOptionsToPackage{top=1cm, bottom=3cm, left=2cm, right=1.5cm, includehead=true, includefoot=true}{geometry}
+  \providecommand{\hhlinespacing}{1.0}
 }
 { % long or thesis
   % hh long margins in MS Word: top: 1cm, left 2cm, gutter: 2cm, bottom: 1cm, right: 1.5cm
   \PassOptionsToPackage{top=1cm, bottom=3cm, left=4cm, right=1.5cm, includehead=true, includefoot=true}{geometry}
   \providecommand{\hhleftmargin}{0cm}
+  \providecommand{\hhlinespacing}{1.5} % HH line spacing uses the MS Word 1.5 spacing in thesis and long format
 }
 
 \usepackage{geometry}
@@ -161,6 +163,7 @@ $endif$
 \providecommand{\hhdocumentpagecount}{$if(hhdocumentpagecount)$$hhdocumentpagecount$$else$\pageref{LastPage}$endif$}
 \providecommand{\hhdocumentappendixpagecount}{$if(hhdocumentappendixpagecount)$$hhdocumentappendixpagecount$$else$0$endif$}
 
+\usepackage{setspace}
 \usepackage{titletoc}
 \usepackage{titlesec}
 % new line to top and bottom of any section
@@ -208,10 +211,7 @@ $endif$
     \cfoot{\thepage}
   }
 
-  \usepackage{setspace}
-  
-  % We are aiming to get the MS Word's line spacing instead of \onehalfspacing
-  \setstretch{1.5}
+  \setstretch{\hhlinespacing}
 }
 
 %% pandoc-fignos: environment to disable figure caption prefixes
@@ -318,6 +318,7 @@ $endfor$
 
 $if(abstract)$
 \ifthenelse{\equal{\hhtemplatetype}{thesis}}{
+  \setstretch{1.0} % abstract has smaller spacing than other pages
   \pagestyle{hh-template-abstract-header-footer}
   \newpage
   \noindent{\vspace{-1pt}\fbox{\begin{minipage}[l][2.5em][t]{\textwidth}\textbf{\translate{authors}}\\\hhdocumentauthor\end{minipage}}
@@ -326,6 +327,7 @@ $if(abstract)$
   \vspace{-1pt}\fbox{\begin{minipage}[l][16cm][t]{\textwidth}$abstract$\end{minipage}}
   \vspace{-1pt}\fbox{\begin{minipage}[l][2.5em][t]{\textwidth}\textbf{\translate{keywords}}\\\hhdocumentkeywords\end{minipage}}}
   \newpage
+  \setstretch{\hhlinespacing}
 }{}
 $endif$
 
