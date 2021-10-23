@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:11-slim
 
 # create man path manually or java install fails: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
 RUN mkdir -p /usr/share/man/man1 && apt-get update && apt-get install --no-install-recommends -y \
