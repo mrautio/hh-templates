@@ -40,7 +40,7 @@ COPY media/*.png ./media/
 ADD https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard ./haaga-helia-university-of-applied-sciences-harvard.csl
 COPY hhtemplate.tex ./
 
-RUN chmod -R a+r /appdata
+RUN chmod -R a+r /appdata && chown appuser:appuser /appdata
 USER appuser
 
 ENTRYPOINT [ "pandoc", "--template=/appdata/hhtemplate.tex", "--filter=pandoc-tablenos", "--filter=pandoc-fignos", "--filter=pandoc-citeproc", "--filter=pandoc-plantuml", "--pdf-engine=xelatex", "--listings", "--variable=hhreportlogopath:/appdata/media/hhreportlogo.png", "--variable=hhdocumentfont:FreeSans", "--csl=/appdata/haaga-helia-university-of-applied-sciences-harvard.csl" ]
