@@ -26,7 +26,7 @@ jobs:
         name: test-log.txt
         path: test-log.txt
     - name: Copy test cases from container
-      run: docker cp hh-templates-test:/tmp/cases test_cases
+      run: docker cp hh-templates-test:/appdata/cases test_cases
     - name: Upload test cases
       uses: actions/upload-artifact@v1
       with:
