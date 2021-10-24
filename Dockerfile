@@ -19,7 +19,7 @@ RUN mkdir -p /usr/share/man/man1 && apt-get update && apt-get install --no-insta
     python3-pip \
     python3-setuptools \
     gcc \
-    && pip3 install \
+    && pip3 install --no-cache-dir \
     pandoc-fignos \
     pandoc-tablenos \
     pandoc-plantuml-filter \
