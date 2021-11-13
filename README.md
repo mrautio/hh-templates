@@ -86,8 +86,10 @@ This README file is an example that can be rendered to Haaga-Helia document temp
 
 ### Markdown to PDF with Docker
 
+Note: Container does not require networking unless you refer to Internet resources (like Internet URLs for images) in your reports. So as a best practice "--network none" is recommended to disable networking.
+
 ```sh
-docker run --rm -v host-path-to-report-data:/report -t mrautio/hh-templates -o /report/report.pdf /report/report.md --variable=hhtemplatetype:long
+docker run --rm --network none --volume host-path-to-report-data:/report --tty mrautio/hh-templates --output /report/report.pdf /report/report.md --variable=hhtemplatetype:long
 ```
 
 You can use [cosign](https://github.com/sigstore/cosign) to validate the container releases.

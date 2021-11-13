@@ -15,11 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build template processor Docker image
-      run: docker build -t hh-templates -f Dockerfile .
+      run: docker build --tag hh-templates --file Dockerfile .
     - name: Build template test automation Docker image
-      run: docker build -t hh-templates-test -f test/Dockerfile test
+      run: docker build --tag hh-templates-test --file test/Dockerfile test
     - name: Run tests
-      run: docker run --name hh-templates-test -t hh-templates-test | tee test-log.txt
+      run: docker run --rm --network none --name hh-templates-test --tag hh-templates-test | tee test-log.txt
     - name: Upload test logs
       uses: actions/upload-artifact@v1
       with:
