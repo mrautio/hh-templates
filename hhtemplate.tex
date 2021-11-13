@@ -87,21 +87,21 @@ $endif$
 \newtranslation[to = finnish]{report}{Raportti}
 \newtranslation[to = british]{assignmentreport}{Report}
 \newtranslation[to = finnish]{assignmentreport}{Harjoitustyöraportti}
-\newtranslation[to = british]{toctitle}{Table of contents}
+\newtranslation[to = british]{toctitle}{Contents}
 \newtranslation[to = finnish]{toctitle}{Sisällys}
 \newtranslation[to = british]{abstract}{Abstract}
 \newtranslation[to = finnish]{abstract}{Tiivistelmä}
 \newtranslation[to = british]{authors}{Author(s)}
 \newtranslation[to = finnish]{authors}{Tekijä(t)}
-\newtranslation[to = british]{thesisname}{Report/thesis title}
+\newtranslation[to = british]{thesisname}{Thesis title}
 \newtranslation[to = finnish]{thesisname}{Opinnäytetyön nimi}
 \newtranslation[to = british]{pagecount}{Number of pages}
 \newtranslation[to = finnish]{pagecount}{Sivumäärä}
-\newtranslation[to = british]{appendixpagecount}{appendix pages}
-\newtranslation[to = finnish]{appendixpagecount}{liitesivumäärä}
+\newtranslation[to = british]{numberofappendices}{number of appendices}
+\newtranslation[to = finnish]{numberofappendices}{liitesivumäärä}
 \newtranslation[to = british]{keywords}{Keywords}
 \newtranslation[to = finnish]{keywords}{Asiasanat}
-\newtranslation[to = british]{orientation}{Degree programme}
+\newtranslation[to = british]{orientation}{Specialisation}
 \newtranslation[to = finnish]{orientation}{Suuntautuminen}
 \newtranslation[to = british]{abbreviations}{Abbreviations}
 \newtranslation[to = finnish]{abbreviations}{Lyhenteet}
@@ -161,7 +161,7 @@ $endif$
 
 
 \providecommand{\hhdocumentpagecount}{$if(hhdocumentpagecount)$$hhdocumentpagecount$$else$\pageref{LastPage}$endif$}
-\providecommand{\hhdocumentappendixpagecount}{$if(hhdocumentappendixpagecount)$$hhdocumentappendixpagecount$$else$0$endif$}
+\providecommand{\hhdocumentnumberofappendices}{$if(hhdocumentnumberofappendices)$$hhdocumentnumberofappendices$$else$$if(hhdocumentappendixpagecount)$$hhdocumentappendixpagecount$$else$0$endif$$endif$}
 
 \usepackage{setspace}
 \usepackage{titletoc}
@@ -323,9 +323,9 @@ $if(abstract)$
   \newpage
   \noindent{\vspace{-1pt}\fbox{\begin{minipage}[l][2.5em][t]{\textwidth}\textbf{\translate{authors}}\\\hhdocumentauthor\end{minipage}}
   \vspace{-1pt}\fbox{\begin{minipage}[l][2.5em][t]{\textwidth}\textbf{\translate{orientation}}\\\orientation\end{minipage}}
-  \vspace{-1pt}\fbox{\begin{minipage}[l][4em][t]{\dimexpr(\textwidth-4cm)}\textbf{\translate{thesisname}}\\\ \\\hhdocumenttitle\end{minipage}}\hspace{-1pt}\fbox{\begin{minipage}[l][4em][t]{3.8cm}\textbf{\translate{pagecount} +\\\translate{appendixpagecount}}\\ \hhdocumentpagecount\ + \hhdocumentappendixpagecount\end{minipage}}
+  \vspace{-1pt}\fbox{\begin{minipage}[l][4em][t]{\dimexpr(\textwidth-4.5cm)}\textbf{\translate{thesisname}}\\\ \\\hhdocumenttitle\end{minipage}}\hspace{-1pt}\fbox{\begin{minipage}[l][4em][t]{4.3cm}\textbf{\translate{pagecount} +\\\translate{numberofappendices}}\\ \hhdocumentpagecount\ + \hhdocumentnumberofappendices\end{minipage}}
   \vspace{-1pt}\fbox{\begin{minipage}[l][16cm][t]{\textwidth}$abstract$\end{minipage}}
-  \vspace{-1pt}\fbox{\begin{minipage}[l][2.5em][t]{\textwidth}\textbf{\translate{keywords}}\\\hhdocumentkeywords\end{minipage}}}
+  \vspace{-1pt}\fbox{\begin{minipage}[l][3.5em][t]{\textwidth}\textbf{\translate{keywords}}\\\hhdocumentkeywords\end{minipage}}}
   \newpage
   \setstretch{\hhlinespacing}
 }{}
