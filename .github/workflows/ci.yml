@@ -19,7 +19,7 @@ jobs:
     - name: Build template test automation Docker image
       run: docker build --tag hh-templates-test --file test/Dockerfile test
     - name: Run tests
-      run: docker run --rm --network none --name hh-templates-test --tag hh-templates-test | tee test-log.txt
+      run: docker run --network none --name hh-templates-test --tag hh-templates-test | tee test-log.txt
     - name: Upload test logs
       uses: actions/upload-artifact@v1
       with:
