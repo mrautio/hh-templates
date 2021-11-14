@@ -108,7 +108,7 @@ pandoc --from markdown --template hhtemplate.tex --filter pandoc-tablenos --filt
 
 ## Haaga-Helia reference Citation Style Language (CSL) configuration
 
-Haaga-Helia reference style CSL configuration is available from [https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard](https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard). You can use the style with CSL supporting reference management software like Papers, RefWorks or Zotero.
+Haaga-Helia reference style CSL configuration is available from [https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard](https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard). You can use the style with CSL supporting reference management software like Papers, RefWorks or Zotero. Check the [contributing guide](https://github.com/citation-style-language/styles/blob/master/CONTRIBUTING.md), if you want to improve the style.
 
 ## License
 
