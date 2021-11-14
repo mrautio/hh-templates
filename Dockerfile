@@ -41,7 +41,7 @@ ARG CSL_SHA256="b91659d96cba6735392717f44157ba5719dc08376eb046ab21f18ad991ed4e98
 
 COPY media/*.png ./media/
 ADD $CSL_URL ./style.csl
-COPY hhtemplate.tex ./
+COPY hhtemplate.tex references.md ./
 
 RUN \
     # Grant access rights for the appuser
