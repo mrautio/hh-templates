@@ -129,7 +129,8 @@ $endif$
 
 \usepackage{caption}
 \usepackage{subcaption}
-\captionsetup[figure]{format=plain,labelformat=default,labelsep=default,justification=default,font=default,labelfont=default,textfont=default,margin=0pt,indention=0pt,parindent=0pt,hangindent=0pt,singlelinecheck=true}
+\captionsetup[figure]{format=plain,labelformat=default,labelsep=period,justification=default,font=default,labelfont=default,textfont=default,margin=0pt,indention=0pt,parindent=0pt,hangindent=0pt,singlelinecheck=true}
+\captionsetup[table]{format=plain,labelformat=default,labelsep=period,justification=default,font=default,labelfont=default,textfont=default,margin=0pt,indention=0pt,parindent=0pt,hangindent=0pt,singlelinecheck=true}
 
 % TODO: improve code listings: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
 \usepackage{listings}
@@ -232,6 +233,28 @@ $endif$
     \let\thefigure\oldthefigure
     \let\theHfigure\oldtheHfigure
     \addtocounter{figure}{-1}
+  }
+}
+\makeatother
+
+%% pandoc-tablenos: environment to disable table caption prefixes
+\makeatletter
+\newcounter{tableno}
+\newenvironment{tablenos:no-prefix-table-caption}{
+  \caption@ifcompatibility{}{
+    \let\oldthetable\thetable
+    \let\oldtheHtable\theHtable
+    \renewcommand{\thetable}{tableno:\thetableno}
+    \renewcommand{\theHtable}{tableno:\thetableno}
+    \stepcounter{tableno}
+    \captionsetup{labelformat=empty}
+  }
+}{
+  \caption@ifcompatibility{}{
+    \captionsetup{labelformat=default}
+    \let\thetable\oldthetable
+    \let\theHtable\oldtheHtable
+    \addtocounter{table}{-1}
   }
 }
 \makeatother
