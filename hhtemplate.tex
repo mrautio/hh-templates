@@ -288,7 +288,13 @@ $endfor$
       \par\hhdocumentauthor
     \end{textblock*}
     
-    \begin{textblock*}{5cm}(13cm,24.5cm)
+    \begin{textblock*}{4cm}(14.5cm,24.5cm)
+    \setlength{\parskip}{0.0em}
+    % No hyphenation here
+    \tolerance=1
+    \emergencystretch=\maxdimen
+    \hyphenpenalty=10000
+    \hbadness=10000
     \ifthenelse{\equal{\hhtemplatetype}{long}}{
       \translate{assignmentreport}
       \par\course
