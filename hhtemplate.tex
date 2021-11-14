@@ -155,14 +155,12 @@ $endif$
   tabsize=2
 }
 
-\usepackage{lastpage}
 \usepackage{sectsty}
 \usepackage{tabto}
 \NumTabs{5}
 
-
-\providecommand{\hhdocumentpagecount}{$if(hhdocumentpagecount)$$hhdocumentpagecount$$else$\pageref{LastPage}$endif$}
-\providecommand{\hhdocumentnumberofappendices}{$if(hhdocumentnumberofappendices)$$hhdocumentnumberofappendices$$else$$if(hhdocumentappendixpagecount)$$hhdocumentappendixpagecount$$else$0$endif$$endif$}
+\providecommand{\hhdocumentpagecount}{\pageref{lastReportPage}}
+\providecommand{\hhdocumentnumberofappendices}{\ifthenelse{\equal{\pageref{lastAppendixPage}}{\pageref{DUMMYNONEXISTINGLABEL}}}{0}{\pageref{lastAppendixPage}}}
 
 \usepackage{setspace}
 \usepackage{titletoc}
@@ -171,6 +169,8 @@ $endif$
 \titlespacing*{\section}{0em}{1em}{1em}
 \titlespacing*{\subsection}{0em}{1em}{1em}
 \titlespacing*{\subsubsection}{0em}{1em}{1em}
+
+\newcommand{\hhheaderpagecount}{\pageref{lastReportPage}}
 
 \ifthenelse{\equal{\hhtemplatetype}{short}}{
 
@@ -190,7 +190,7 @@ $endif$
     \renewcommand{\footrulewidth}{0cm}
     \lhead{\hhdocumentauthor\\\ \\\translate{hhfullname}\\\course}
     \chead{\textbf{\translate{report}}\\\ \\\ \\\ }
-    \rhead{\thepage (\pageref{LastPage})\\\ \\\ \\\hhdocumentdate}
+    \rhead{\thepage (\hhheaderpagecount)\\\ \\\ \\\hhdocumentdate}
   }
 }
 { % long and thesis
@@ -408,13 +408,18 @@ $endif$
 \addtolength{\leftskip}{\hhleftmargin}
 $body$
 
+\label{lastReportPage}
+
 $if(include-after)$
 \setcounter{secnumdepth}{-1}
 \newpage
 \setcounter{page}{1}
+\renewcommand{\hhheaderpagecount}{\pageref{lastAppendixPage}}
+\pagestyle{hh-template-header-footer}
 $for(include-after)$
 $include-after$
 $endfor$
+\label{lastAppendixPage}
 $endif$
 
 \end{document}
