@@ -107,6 +107,8 @@ $endif$
 \newtranslation[to = finnish]{abbreviations}{Lyhenteet}
 \newtranslation[to = british]{hhfullname}{Haaga-Helia University of Applied Sciences}
 \newtranslation[to = finnish]{hhfullname}{Haaga-Helia ammattikorkeakoulu}
+\newtranslation[to = british]{references}{References}
+\newtranslation[to = finnish]{references}{Lähteet}
 
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -159,7 +161,7 @@ $endif$
 \usepackage{tabto}
 \NumTabs{5}
 
-\providecommand{\hhdocumentpagecount}{\pageref{lastReportPage}}
+\providecommand{\hhdocumentpagecount}{\ifthenelse{\equal{\pageref{lastReferencePage}}{\pageref{DUMMYNONEXISTINGLABEL}}}{\pageref{lastReportPage}}{\pageref{lastReferencePage}}}
 \providecommand{\hhdocumentnumberofappendices}{\ifthenelse{\equal{\pageref{lastAppendixPage}}{\pageref{DUMMYNONEXISTINGLABEL}}}{0}{\pageref{lastAppendixPage}}}
 
 \usepackage{setspace}
