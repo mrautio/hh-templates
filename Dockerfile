@@ -51,4 +51,4 @@ RUN \
 
 USER appuser
 
-ENTRYPOINT [ "pandoc", "--template=/appdata/hhtemplate.tex", "--filter=pandoc-tablenos", "--filter=pandoc-fignos", "--filter=pandoc-citeproc", "--filter=pandoc-plantuml", "--pdf-engine=xelatex", "--listings", "--variable=hhreportlogopath:/appdata/media/hhreportlogo.png", "--variable=hhdocumentfont:FreeSans", "--csl=/appdata/style.csl" ]
+ENTRYPOINT [ "pandoc", "--template=/appdata/hhtemplate.tex", "--filter=pandoc-tablenos", "--filter=pandoc-fignos", "--filter=pandoc-citeproc", "--filter=pandoc-plantuml", "--pdf-engine=xelatex", "--listings", "--variable=hhreportlogopath:/appdata/media/hhreportlogo.png", "--variable=hhdocumentfont:FreeSans", "--csl=/appdata/style.csl", "--resource-path=/appdata:/report:." ]
