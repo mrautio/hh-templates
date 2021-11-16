@@ -86,13 +86,23 @@ This README file is an example that can be rendered to Haaga-Helia document temp
 
 ### Markdown to PDF with Docker
 
-Note: Container does not require networking unless you refer to Internet resources (like Internet URLs for images) in your reports. So as a best practice "--network none" is recommended to disable networking.
-
 ```sh
-docker run --rm --network none --volume host-path-to-report-data:/report --tty mrautio/hh-templates --output /report/report.pdf /report/report.md --variable=hhtemplatetype:long
+docker run --rm --volume host-path-to-report-data:/report --tty mrautio/hh-templates --output /report/report.pdf /report/report.md --variable=hhtemplatetype:long
 ```
 
-You can use [cosign](https://github.com/sigstore/cosign) to validate the container releases.
+### More secure Markdown to PDF with Docker
+
+In general the container image is attempted to be kept up-to-date and relatively secure. Unfortunately LaTeX and related components require extensive amounts of dependencies. To decrease risk to your data, you may sandbox the container operations further by disabling networking and using read-only volumes.
+
+- `--network none` disables network access. Container does not require networking unless you refer to Internet resources (like Internet URLs for images) in your input documents. 
+
+- Read-only volumes with `:ro` suffix ensure that the container can only read the volume data, not write to it. Container does not require write access to mount volume with the report data. However this requires reports to be written to STDOUT or another write accessible volume mount. Direct use of PowerShell should be avoided as [it corrupts the STDOUT data](https://docs.microsoft.com/en-us/archive/blogs/sergey_babkins_blog/un-messing-unicode-in-powershell). Output to STDOUT may hide potential document conversion errors.
+
+```sh
+docker run --rm --network none --volume host-path-to-report-data:/report:ro --attach stdout mrautio/hh-templates --to=pdf --output - /report/report.md /appdata/references.md /report/attachments.md > report.pdf
+```
+
+You can use [cosign](https://github.com/sigstore/cosign) to validate the container image release authenticity.
 
 ```sh
 cosign verify -key cosign.pub mrautio/hh-templates
