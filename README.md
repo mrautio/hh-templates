@@ -99,7 +99,7 @@ In general the container image is attempted to be kept up-to-date and relatively
 - Read-only volumes with `:ro` suffix ensure that the container can only read the volume data, not write to it. Container does not require write access to mount volume with the report data. However this requires reports to be written to STDOUT or another write accessible volume mount. Direct use of PowerShell should be avoided as [it corrupts the STDOUT data](https://docs.microsoft.com/en-us/archive/blogs/sergey_babkins_blog/un-messing-unicode-in-powershell). Output to STDOUT may hide potential document conversion errors.
 
 ```sh
-docker run --rm --network none --volume host-path-to-report-data:/report:ro --attach stdout mrautio/hh-templates --to=pdf --output - /report/report.md /appdata/references.md /report/attachments.md > report.pdf
+docker run --rm --network none --volume host-path-to-report-data:/report:ro --attach stdout mrautio/hh-templates --to=pdf --output - /report/report.md > report.pdf
 ```
 
 You can use [cosign](https://github.com/sigstore/cosign) to validate the container image release authenticity.
