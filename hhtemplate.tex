@@ -124,10 +124,10 @@ $endif$
 \usepackage{fancyhdr}
 
 % pandoc creates adds \tightlist command if bullet lists do not have blank lines between them
-\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}\setlength{\leftskip}{\hhleftmargin}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}\setlength{\leftskip}{0pt}}
 
 \usepackage{enumitem}
-\setlist[itemize]{leftmargin=*}
+\setlist[itemize]{leftmargin=\hhleftmargin}
 
 \usepackage{caption}
 \usepackage{subcaption}
@@ -182,7 +182,8 @@ $endif$
   \titleformat*{\subsubsection}{\normalfont}
 
   % Option to start paragraph from same line with subsubsection
-  \titlespacing*{\subsubsection}{0em}{1em}{-1.1em}
+  % technically SFS 2487 does not mandate having subsections start from the same line
+  % \titlespacing*{\subsubsection}{0em}{1em}{-1.1em}
 
   \setcounter{secnumdepth}{-1}
   \fancypagestyle{hh-template-header-footer}{
