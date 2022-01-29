@@ -15,7 +15,7 @@ course: "ICT1TA1337 test case"
 | Let's put some more text here | Because we can | And we will |
 | How's the url | [DuckDuckGo](https://duckduckgo.com/) | ? |
 
-Table: Example table. {#tbl:id}
+Table: Example table. {#tbl:tableidexample}
 
-That's how the tables are rolled!
+That's how the tables are rolled! See the cool reference in table @tbl:tableidexample.
 
