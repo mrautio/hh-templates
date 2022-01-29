@@ -37,7 +37,7 @@ RUN mkdir -p /usr/share/man/man1 && apt-get update && apt-get install --no-insta
 WORKDIR /appdata
 
 ARG CSL_URL="https://www.zotero.org/styles/haaga-helia-university-of-applied-sciences-harvard"
-ARG CSL_SHA256="b91659d96cba6735392717f44157ba5719dc08376eb046ab21f18ad991ed4e98"
+ARG CSL_SHA256="1e483484f2dd99ebf7c2fe204c6e05788f7eee47a2275daa71997923e916b75c"
 
 COPY media/*.png ./media/
 ADD $CSL_URL ./style.csl
