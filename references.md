@@ -10,6 +10,6 @@
 \setcounter{secnumdepth}{-1}
 \newpage
 \setcounter{page}{1}
-\renewcommand{\hhheaderpagecount}{\pageref{lastAppendixPage}}
+\renewcommand{\hhdocumentpagecount}{\hhdocumentnumberofappendices}
 \pagestyle{hh-template-header-footer}
 

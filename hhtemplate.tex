@@ -173,8 +173,6 @@ $endif$
 \titlespacing*{\subsection}{0em}{1em}{1em}
 \titlespacing*{\subsubsection}{0em}{1em}{1em}
 
-\newcommand{\hhheaderpagecount}{\pageref{lastReportPage}}
-
 \ifthenelse{\equal{\hhtemplatetype}{short}}{
 
   \titleformat*{\section}{\normalfont\bfseries}
@@ -194,7 +192,7 @@ $endif$
     \renewcommand{\footrulewidth}{0cm}
     \lhead{\hhdocumentauthor\\\ \\\translate{hhfullname}\\\course}
     \chead{\textbf{\translate{report}}\\\ \\\ \\\ }
-    \rhead{\thepage (\hhheaderpagecount)\\\ \\\ \\\hhdocumentdate}
+    \rhead{\thepage (\hhdocumentpagecount)\\\ \\\ \\\hhdocumentdate}
   }
 }
 { % long and thesis
@@ -421,15 +419,9 @@ $body$
 \label{lastReportPage}
 
 $if(include-after)$
-\setcounter{secnumdepth}{-1}
-\newpage
-\setcounter{page}{1}
-\renewcommand{\hhheaderpagecount}{\pageref{lastAppendixPage}}
-\pagestyle{hh-template-header-footer}
 $for(include-after)$
 $include-after$
 $endfor$
-\label{lastAppendixPage}
 $endif$
 
 \end{document}
