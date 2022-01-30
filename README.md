@@ -111,7 +111,7 @@ docker run --rm --network none --volume host-path-to-report-data:/report:ro --at
 You can use [cosign](https://github.com/sigstore/cosign) to validate the container image release authenticity.
 
 ```sh
-cosign verify -key cosign.pub mrautio/hh-templates
+cosign verify --key cosign.pub mrautio/hh-templates
 ```
 
 ### Markdown to PDF with pandoc
